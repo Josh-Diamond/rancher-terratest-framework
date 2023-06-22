@@ -85,7 +85,6 @@
         -   [GKE](#configurations-terraform-gke)
         -   [EC2_RKE1](#configurations-terraform-ec2_rke1)
         -   [LINODE_RKE1](#configurations-terraform-linode_rke1)
-        -   [RKE2 + K3S](#configurations-terraform-rke2_k3s)
         -   [EC2_RKE2 + EC2_K3S](#configurations-terraform-rke2_k3s_ec2)
         -   [LINODE_RKE2 + LINODE_K3S](#configurations-terraform-rke2_k3s_linode)
     -   [Terratest](#configurations-terratest)

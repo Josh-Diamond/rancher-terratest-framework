@@ -11,7 +11,7 @@ import (
 	"github.com/rancher/rancher/tests/framework/pkg/config"
 	"github.com/rancher/rancher/tests/framework/pkg/session"
 	wait "github.com/josh-diamond/rancher-terratest-framework/functions/wait"
-	"github.com/josh-diamond/rancher-terratest-framework/tests/rancher2"
+	"github.com/josh-diamond/rancher-terratest-framework/terratest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	kwait "k8s.io/apimachinery/pkg/util/wait"

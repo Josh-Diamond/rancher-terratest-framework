@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/rancher/rancher/tests/framework/pkg/config"
-	"github.com/josh-diamond/rancher-terratest-framework/tests/rancher2"
+	"github.com/josh-diamond/rancher-terratest-framework/terratest"
 )
 
 func SetResourceNodepoolValidation(t *testing.T, pool terratest.Nodepool, poolNum string) (bool, error) {

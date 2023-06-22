@@ -6,7 +6,7 @@ import (
 
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
 	"github.com/rancher/rancher/tests/framework/pkg/config"
-	"github.com/josh-diamond/rancher-terratest-framework/tests/rancher2"
+	"github.com/josh-diamond/rancher-terratest-framework/terratest"
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/util/wait"
 )

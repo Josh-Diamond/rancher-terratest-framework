@@ -10,7 +10,7 @@ import (
 	"github.com/rancher/rancher/tests/framework/pkg/config"
 	set "github.com/josh-diamond/rancher-terratest-framework/functions/set"
 	wait "github.com/josh-diamond/rancher-terratest-framework/functions/wait"
-	"github.com/josh-diamond/rancher-terratest-framework/tests/rancher2"
+	"github.com/josh-diamond/rancher-terratest-framework/terratest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

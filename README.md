@@ -403,6 +403,12 @@ terratest:
       <td>boolean</td>
       <td>true</td>
     </tr>
+    <tr>
+      <td>nodeRole</td>
+      <td>Optional with Rancher v2.7+ - if provided, this custom role will be used when creating instances for node groups</td>
+      <td>string</td>
+      <td>arn:aws:iam::############:role/my-custom-NodeInstanceRole-############</td>
+    </tr>
   </tbody>
 </table>
 
@@ -427,6 +433,7 @@ terratest:
   hostnamePrefix: jkeslar
   publicAccess: true
   privateAccess: true
+  nodeRole: arn:aws:iam::############:role/my-custom-NodeInstanceRole-############
 ```
 
 ---
@@ -744,16 +751,6 @@ terraform:
 
 ---
 
-
-<a name="configurations-terraform-rke2_k3s"></a>
-#### :small_red_triangle: [Back to top](#top)
-
-#### RKE2 + K3S
-Note: RKE2 and K3s modules currently require existing cloud credentials, provider specific (ec2/linode), to be created on the rancher server BEFORE running any tests.  The unique name used to create these will need to be set as the cloudCredentialName, in the configs below:
-
----
-
-
 <a name="configurations-terraform-rke2_k3s_ec2"></a>
 #### :small_red_triangle: [Back to top](#top)
 
@@ -781,7 +778,7 @@ Note: RKE2 and K3s modules currently require existing cloud credentials, provide
     </tr>
     <tr>
       <td>cloudCredentialName</td>
-      <td>provide the name of valid ec2 cloud credentials, already existing on your rancher server </td>
+      <td>provide the name of unique cloud credentials to be created during testing</td>
       <td>string</td>
       <td>tf-creds-rke2</td>
     </tr>
@@ -865,7 +862,7 @@ Note: RKE2 and K3s modules currently require existing cloud credentials, provide
 terraform:
   providerVersion: '1.25.0'
   module: ec2_rke2
-  cloudCredentialName: my-existing-credentials
+  cloudCredentialName: tf-creds-rke2
   awsAccessKey: XXXXXXXXXXXXXXXXXXXX
   awsSecretKey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   ami:
@@ -911,7 +908,7 @@ terraform:
     </tr>
     <tr>
       <td>cloudCredentialName</td>
-      <td>provide the name of valid linode cloud credentials, already existing on your rancher server</td>
+      <td>provide the name of unique cloud credentials to be created during testing</td>
       <td>string</td>
       <td>tf-linode</td>
     </tr>
@@ -971,7 +968,7 @@ terraform:
 terraform:
   providerVersion: '1.25.0'
   module: linode_k3s
-  cloudCredentialName: my-existing-credentials
+  cloudCredentialName: tf-linode-creds
   linodeToken: XXXXXXXXXXXXXXXXXXXX
   linodeImage: linode/ubuntu20.04
   region: us-east

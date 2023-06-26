@@ -2,7 +2,22 @@ module github.com/josh-diamond/rancher-terratest-framework
 
 go 1.19
 
-require github.com/gruntwork-io/terratest v0.43.3
+replace (
+	github.com/rancher/rancher/pkg/apis => github.com/rancher/rancher/pkg/apis v0.0.0-20230525094739-ff2e09449efc
+	github.com/rancher/rancher/pkg/client => github.com/rancher/rancher/pkg/client v0.0.0-20230525094739-ff2e09449efc
+	k8s.io/apimachinery => k8s.io/apimachinery v0.25.4
+	k8s.io/client-go => github.com/rancher/client-go v1.25.4-rancher1
+)
+
+// Currently based on the commit v0.0.0-20230525094739-ff2e09449efc dated June 2nd, 2023
+require (
+	github.com/rancher/rancher v0.0.0-20230525094739-ff2e09449efc
+	github.com/stretchr/testify v1.8.3
+	k8s.io/api v0.25.4 // indirect
+	k8s.io/apimachinery v0.25.4
+)
+
+require github.com/gruntwork-io/terratest v0.42.0
 
 require (
 	cloud.google.com/go v0.105.0 // indirect
@@ -37,7 +52,6 @@ require (
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/stretchr/testify v1.8.3
 	github.com/tmccombs/hcl2json v0.3.3 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/zclconf/go-cty v1.13.0
@@ -54,7 +68,6 @@ require (
 	google.golang.org/grpc v1.51.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/apimachinery v0.27.3
 )
 
 require (
@@ -113,7 +126,6 @@ require (
 	gomodules.xyz/jsonpatch/v2 v2.2.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	k8s.io/api v0.27.2 // indirect
 	k8s.io/apiextensions-apiserver v0.25.4 // indirect
 	k8s.io/apiserver v0.25.4 // indirect
 	k8s.io/client-go v12.0.0+incompatible // indirect
@@ -128,15 +140,3 @@ require (
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
-
-////
-
-replace (
-	github.com/rancher/rancher/pkg/apis => github.com/rancher/rancher/pkg/apis v0.0.0-20230525094739-ff2e09449efc
-	github.com/rancher/rancher/pkg/client => github.com/rancher/rancher/pkg/client v0.0.0-20230525094739-ff2e09449efc
-	k8s.io/apimachinery => k8s.io/apimachinery v0.25.4
-	k8s.io/client-go => github.com/rancher/client-go v1.25.4-rancher1
-)
-
-// Currently based on the commit v0.0.0-20230525094739-ff2e09449efc dated June 2nd, 2023
-require github.com/rancher/rancher v0.0.0-20230525094739-ff2e09449efc

@@ -242,7 +242,7 @@ The `terraform` configurations in the `cattle-config.yaml` are module specific. 
       <td>resourceLocation</td>
       <td>provide location for Azure instances</td>
       <td>string</td>
-      <td>east-us</td>
+      <td>eastus</td>
     </tr>
     <tr>
       <td>hostnamePrefix</td>
@@ -293,7 +293,7 @@ terratest:
   azureSubscriptionID: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
   clusterName: jkeslar-cluster
   resourceGroup: my-resource-group
-  resourceLocation: east-us
+  resourceLocation: eastus
   hostnamePrefix: jkeslar
   networkPlugin: kubenet
   availabilityZones:

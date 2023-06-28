@@ -5,15 +5,15 @@ import (
 	"time"
 
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/util/wait"
 )
 
 func KubernetesUpgrade(t *testing.T, client *rancher.Client, clusterID string, module string) (done bool, err error) {
-	clusterConfig := new(terratest.TerratestConfig)
-	config.LoadConfig("terratest", clusterConfig)
+	clusterConfig := new(config.TerratestConfig)
+	framework.LoadConfig("terratest", clusterConfig)
 
 	if module == "aks" || module == "gke" {
 		expectedUpgradedKubernetesVersion := `v` + clusterConfig.UpgradedKubernetesVersion

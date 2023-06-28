@@ -8,22 +8,22 @@ import (
 	"github.com/hashicorp/hcl/v2/hclsyntax"
 	"github.com/hashicorp/hcl/v2/hclwrite"
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/zclconf/go-cty/cty"
 )
 
-func SetGKE(t *testing.T, k8sVersion string, nodePools []terratest.Nodepool, file *os.File) (done bool, err error) {
+func SetGKE(t *testing.T, k8sVersion string, nodePools []config.Nodepool, file *os.File) (done bool, err error) {
 	rancherConfig := new(rancher.Config)
-	config.LoadConfig("rancher", rancherConfig)
+	framework.LoadConfig("rancher", rancherConfig)
 
-	terraformConfig := new(terratest.TerraformConfig)
-	config.LoadConfig("terraform", terraformConfig)
+	terraformConfig := new(config.TerraformConfig)
+	framework.LoadConfig("terraform", terraformConfig)
 
-	googleAuthEncodedJSONConfig := new(terratest.GoogleAuthEncodedJSON)
-	config.LoadConfig("googleAuthEncodedJSON", googleAuthEncodedJSONConfig)
+	googleAuthEncodedJSONConfig := new(config.GoogleAuthEncodedJSON)
+	framework.LoadConfig("googleAuthEncodedJSON", googleAuthEncodedJSONConfig)
 
 	f := hclwrite.NewEmptyFile()
 

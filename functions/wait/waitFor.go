@@ -4,15 +4,15 @@ import (
 	"testing"
 
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	wait_action "github.com/josh-diamond/rancher-terratest-framework/functions/wait/action"
 	wait_state "github.com/josh-diamond/rancher-terratest-framework/functions/wait/state"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 )
 
 func WaitFor(t *testing.T, client *rancher.Client, clusterID string, action string) {
-	terraformConfig := new(terratest.TerraformConfig)
-	config.LoadConfig("terraform", terraformConfig)
+	terraformConfig := new(config.TerraformConfig)
+	framework.LoadConfig("terraform", terraformConfig)
 
 	module := terraformConfig.Module
 

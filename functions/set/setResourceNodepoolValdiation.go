@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 )
 
-func SetResourceNodepoolValidation(t *testing.T, pool terratest.Nodepool, poolNum string) (bool, error) {
-	terraformConfig := new(terratest.TerraformConfig)
-	config.LoadConfig("terraform", terraformConfig)
+func SetResourceNodepoolValidation(t *testing.T, pool config.Nodepool, poolNum string) (bool, error) {
+	terraformConfig := new(config.TerraformConfig)
+	framework.LoadConfig("terraform", terraformConfig)
 
 	module := terraformConfig.Module
 

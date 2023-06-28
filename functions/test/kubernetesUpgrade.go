@@ -7,7 +7,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
 	"github.com/rancher/rancher/tests/framework/extensions/clusters"
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	set "github.com/josh-diamond/rancher-terratest-framework/functions/set"
 	wait "github.com/josh-diamond/rancher-terratest-framework/functions/wait"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
@@ -19,11 +19,11 @@ func KubernetesUpgrade(t *testing.T, terraformOptions *terraform.Options, client
 	var provider string
 	var expectedUpgradedKubernetesVersion string
 
-	terraformConfig := new(terratest.TerraformConfig)
-	config.LoadConfig("terraform", terraformConfig)
+	terraformConfig := new(config.TerraformConfig)
+	framework.LoadConfig("terraform", terraformConfig)
 
-	clusterConfig := new(terratest.TerratestConfig)
-	config.LoadConfig("terratest", clusterConfig)
+	clusterConfig := new(config.TerratestConfig)
+	framework.LoadConfig("terratest", clusterConfig)
 
 	module := terraformConfig.Module
 

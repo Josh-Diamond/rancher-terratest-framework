@@ -5,13 +5,13 @@ import (
 	"os"
 	"testing"
 
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 )
 
-func SetConfigTF(t *testing.T, k8sVersion string, nodePools []terratest.Nodepool) (done bool, err error) {
-	terraformConfig := new(terratest.TerraformConfig)
-	config.LoadConfig("terraform", terraformConfig)
+func SetConfigTF(t *testing.T, k8sVersion string, nodePools []config.Nodepool) (done bool, err error) {
+	terraformConfig := new(config.TerraformConfig)
+	framework.LoadConfig("terraform", terraformConfig)
 
 	module := terraformConfig.Module
 

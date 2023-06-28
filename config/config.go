@@ -1,4 +1,4 @@
-package terratest
+package config
 
 type GoogleAuthEncodedJSON struct {
 	AuthProviderX509CertURL string `json:"auth_provider_x509_cert_url" yaml:"auth_provider_x509_cert_url"`

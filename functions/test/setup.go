@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	set "github.com/josh-diamond/rancher-terratest-framework/functions/set"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 	"github.com/stretchr/testify/assert"
@@ -12,8 +12,8 @@ import (
 )
 
 func Setup(t *testing.T) (*terraform.Options, bool, error) {
-	clusterConfig := new(terratest.TerratestConfig)
-	config.LoadConfig("terratest", clusterConfig)
+	clusterConfig := new(config.TerratestConfig)
+	framework.LoadConfig("terratest", clusterConfig)
 
 	keyPath := set.SetKeyPath()
 

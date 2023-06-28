@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/rancher/rancher/tests/framework/pkg/config"
+	framework "github.com/rancher/rancher/tests/framework/pkg/config"
 	set "github.com/josh-diamond/rancher-terratest-framework/functions/set"
 	"github.com/josh-diamond/rancher-terratest-framework/config"
 	"github.com/stretchr/testify/assert"
@@ -12,8 +12,8 @@ import (
 )
 
 func BuildModule(t *testing.T) (bool, error) {
-	clusterConfig := new(terratest.TerratestConfig)
-	config.LoadConfig("terratest", clusterConfig)
+	clusterConfig := new(config.TerratestConfig)
+	framework.LoadConfig("terratest", clusterConfig)
 
 	keyPath := set.SetKeyPath()
 

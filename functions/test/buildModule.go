@@ -6,7 +6,7 @@ import (
 
 	"github.com/rancher/rancher/tests/framework/pkg/config"
 	set "github.com/josh-diamond/rancher-terratest-framework/functions/set"
-	"github.com/josh-diamond/rancher-terratest-framework/terratest"
+	"github.com/josh-diamond/rancher-terratest-framework/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

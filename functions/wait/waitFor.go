@@ -7,7 +7,7 @@ import (
 	"github.com/rancher/rancher/tests/framework/pkg/config"
 	wait_action "github.com/josh-diamond/rancher-terratest-framework/functions/wait/action"
 	wait_state "github.com/josh-diamond/rancher-terratest-framework/functions/wait/state"
-	"github.com/josh-diamond/rancher-terratest-framework/terratest"
+	"github.com/josh-diamond/rancher-terratest-framework/config"
 )
 
 func WaitFor(t *testing.T, client *rancher.Client, clusterID string, action string) {

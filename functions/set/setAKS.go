@@ -10,7 +10,7 @@ import (
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
 	"github.com/rancher/rancher/tests/framework/pkg/config"
 	format "github.com/josh-diamond/rancher-terratest-framework/functions/format"
-	"github.com/josh-diamond/rancher-terratest-framework/terratest"
+	"github.com/josh-diamond/rancher-terratest-framework/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/zclconf/go-cty/cty"

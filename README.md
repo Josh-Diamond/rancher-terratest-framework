@@ -77,6 +77,8 @@
 
 To use the existing rancher2 provider downstream cluster tests, it is required, to have a directory called `modules` with a nested directory called `cluster`, in which one blank file, called `main.tf` resides.  This is used by terratest to store and modify the requested infrastructure configurations, as well as to run those configurations and deliver the requested infrastructure.  The `modules` directory MUST be a sibiling directory, to the directory storing the test files.  Rancher QA has satisified this requirement, by storing `modules/cluster/main.tf` as a sibiling directory to the directory housing the test files, which reside in the associated terraform provider's repository.  At this time, only `terraform-provider-rancher2` repository has tests implemented for use.
 
+---
+
 <a name="top"></a>
 
 # <p align="center"> :scroll: Table of contents </p>

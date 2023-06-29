@@ -21,7 +21,6 @@ func BuildModule(t *testing.T) (bool, error) {
 	require.NoError(t, err)
 	assert.Equal(t, true, result)
 
-	// Log module
 	module, err := os.ReadFile(keyPath + "/main.tf")
 
 	if err != nil {

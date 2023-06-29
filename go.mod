@@ -8,8 +8,6 @@ replace (
 	k8s.io/apimachinery => k8s.io/apimachinery v0.25.4
 	k8s.io/client-go => github.com/rancher/client-go v1.25.4-rancher1
 )
-
-// Currently based on the commit v0.0.0-20230525094739-ff2e09449efc dated June 2nd, 2023
 require (
 	github.com/rancher/rancher v0.0.0-20230525094739-ff2e09449efc
 	github.com/stretchr/testify v1.8.3
@@ -72,13 +70,6 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-// require (
-// 	github.com/go-logr/logr v1.2.4 // indirect
-// 	github.com/rancher/norman v0.0.0-20230428185400-96b95e3475e0
-// 	k8s.io/klog/v2 v2.90.1 // indirect
-// 	k8s.io/utils v0.0.0-20230209194617-a36077c30491 // indirect
-// )
 
 require (
 	github.com/beorn7/perks v1.0.1 // indirect

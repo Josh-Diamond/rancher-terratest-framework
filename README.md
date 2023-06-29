@@ -99,6 +99,8 @@
         -  [Build Module](#configurations-terratest-build_module)
         -  [Cleanup](#configurations-terratest-cleanup)
 
+---
+
 <a name="configurations"></a>
 
 ### <p align="center"> Configurations </p>

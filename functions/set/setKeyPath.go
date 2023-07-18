@@ -2,7 +2,7 @@ package functions
 
 func SetKeyPath() string {
 
-	keyPath := "../../../../modules/cluster"
+	keyPath := "../../../modules/cluster"
 
 	return keyPath
 }
